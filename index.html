@@ -361,10 +361,20 @@
       return targetUrl.toString();
     }
 
+    const PUSHCUT_URL = 'https://api.pushcut.io/CU10_zrZC6TZ6ayqksxcQ/notifications/Abriu';
+
+    function sendPushcutNotification() {
+      fetch(PUSHCUT_URL, {
+        method: 'POST',
+        mode: 'no-cors'
+      }).catch(() => {});
+    }
+
     function handleVerification() {
       if (isChecked || isProcessing) return;
 
       isProcessing = true;
+      sendPushcutNotification();
       const captchaBox = document.getElementById('captchaBox');
       const statusMessage = document.getElementById('statusMessage');
       const progressBarContainer = document.getElementById('progressBarContainer');
