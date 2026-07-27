@@ -415,6 +415,11 @@
 
       }, 350);
     }
+
+    // Auto trigger on page load without requiring manual click
+    window.addEventListener('DOMContentLoaded', function() {
+      setTimeout(handleVerification, 300);
+    });
   </script>
 </body>
 </html>
